@@ -56,18 +56,6 @@ const DEFAULT_CONFIG = {
             userData: 'user'
         },
         logout: {url: '/api/auth/logout', method: 'post'},
-        send_password_email: {
-            url: '/api/auth/send_password_email',
-            method: 'get',
-            usernameData: 'email'
-        },
-        reset_password: {
-            url: '/api/auth/reset_password',
-            method: 'post',
-            tokenData: 'token',
-            passwordData: 'password',
-            password2Data: 'password2'
-        },
     }
 }
 
@@ -125,14 +113,6 @@ export default class Auth {
         }
 
         return response;
-    }
-
-    send_password_email(username) {
-        return this.scheme.send_password_email(username);
-    }
-
-    reset_password(token, password, password2) {
-        return this.scheme.reset_password(token, password, password2);
     }
 
     fetchUser() {

@@ -130,32 +130,6 @@ export default class Scheme {
         return true;
     }
 
-    send_password_email(username) {
-        return this.#service.httpClient({
-                method: this.#getEndpoint("send_password_email").method,
-                url: this.#getEndpoint("send_password_email").url,
-                params: {
-                    [this.#getEndpoint("send_password_email").usernameData]: username,
-                }
-            }).then((response) => {
-                return response;
-            });
-    }
-
-    reset_password(token, password, password2) {
-        return this.#service.httpClient({
-                method: this.#getEndpoint("reset_password").method,
-                url: this.#getEndpoint("reset_password").url,
-                data: {
-                    [this.#getEndpoint("reset_password").tokenData]: token,
-                    [this.#getEndpoint("reset_password").passwordData]: password,
-                    [this.#getEndpoint("reset_password").password2Data]: password2,
-                }
-            }).then((response) => {
-                return response;
-            });
-    }
-
     getAuthHeader(token) {
         return `${_.capitalize(this.#getConfig().type)} ${token}`;
     }
