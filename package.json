@@ -1,0 +1,32 @@
+{
+    "name": "dracord",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "rollup -c"
+    },
+    "dependencies": {
+        "axios": "^1.4.0",
+        "jose": "^4.14.4",
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+        "@rollup/plugin-terser": "^0.4.3",
+        "pinia": "^2.1.6",
+        "rollup": "^3.28.0",
+        "vue": "^3.3.4"
+    },
+    "peerDependencies": {
+        "vue": ">=3.0.0"
+    },
+    "files": [
+        "dist/*.*",
+        "LICENSE",
+        "README.md"
+    ],
+    "module": "dist/dracord.mjs",
+    "author": {
+        "name": "Omer Kala",
+        "email": "me@kalaomer.com"
+    }
+}
